@@ -26,8 +26,8 @@ I'm currently exploring agentic AI, scalable architectures, and real-world SaaS 
 ## 📊 GitHub Stats
 
 <p align="left">
-  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=ibrahimhzhz&show_icons=true&theme=default&hide_border=true&count_private=true" />
-  <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ibrahimhzhz&layout=compact&theme=default&hide_border=true&langs_count=6" />
+  <img height="160em" src="./assets/stats.svg" />
+  <img height="160em" src="./assets/langs.svg" />
 </p>
 
 ---
