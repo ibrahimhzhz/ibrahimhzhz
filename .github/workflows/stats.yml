@@ -34,4 +34,5 @@ jobs:
           mkdir -p assets
           git add assets/*.svg
           git commit -m "Update stats cards" || exit 0
+          git pull --rebase
           git push
