@@ -1,16 +1,38 @@
-## Hi there 👋
+# Hi, I'm Ibrahim 👋
 
-<!--
-**ibrahimhzhz/ibrahimhzhz** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+CS student building at the intersection of **AI**, **data**, and **backend systems**.
+I'm currently exploring agentic AI, scalable architectures, and real-world SaaS products.
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 🛠 Tech Stack
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat&logo=postgresql&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat&logo=jupyter&logoColor=white)
+
+---
+
+## 🔭 Currently Working On
+
+- **[ats-backend](https://github.com/ibrahimhzhz/ats-backend)** — An AI-powered applicant tracking system backend built in Python
+- **[loq-hr](https://github.com/ibrahimhzhz/loq-hr)** — A real-world HR SaaS product in JavaScript
+- Exploring **agentic AI workflows** and **scalable system design**
+
+---
+
+## 📊 GitHub Stats
+
+<p align="left">
+  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=ibrahimhzhz&show_icons=true&theme=default&hide_border=true&count_private=true" />
+  <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ibrahimhzhz&layout=compact&theme=default&hide_border=true&langs_count=6" />
+</p>
+
+---
+
+## 📬 Connect
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ibrahim-zubairii)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/ibrahimhzhz)
