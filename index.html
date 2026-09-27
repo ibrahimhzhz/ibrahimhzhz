@@ -15,6 +15,10 @@
   --bg:#fbfaf7; --surface:#ffffff; --ink:#15171a; --muted:#5b6068; --line:#e6e3dc;
   --accent:#1f5eff; --accent-soft:#e8eeff; --chip:#f1efe9;
 }
+:root[data-theme="dark"]{
+  --bg:#0f1113; --surface:#171a1d; --ink:#eef0f2; --muted:#9aa1a9; --line:#262a2f;
+  --accent:#7ea2ff; --accent-soft:#1a2340; --chip:#1f2328;
+}
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#0f1113; --surface:#171a1d; --ink:#eef0f2; --muted:#9aa1a9; --line:#262a2f;
@@ -77,7 +81,7 @@ footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
   <img src="me.jpg" alt="Ibrahim Zubairi">
   <div>
     <h1>Ibrahim Hasan Zubairi</h1>
-    <p class="tag">AI engineer in Karachi. I build voice agents, automations and API integrations, and I ship them.</p>
+    <p class="tag">AI engineer in Karachi. I fine-tune open models, build voice agents and automations, and ship them.</p>
     <div class="links">
       <a class="btn primary" href="Ibrahim_Zubairi_CV.pdf">Download CV</a>
       <a class="btn" href="https://github.com/ibrahimhzhz">GitHub</a>
@@ -89,7 +93,7 @@ footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
 
 <section>
   <h2>About</h2>
-  <p class="lead">I'm a CS student (KSBL, graduating 2027) working as an AI intern at Systems Limited and co-running LoqAI, a small AI automation company. Most of what I build is glue between AI models and real platforms: messaging APIs, voice, CRMs, storefronts. I use Claude Code and Cursor every day, which lets me take something from a rough idea to a deployed, tested service in days rather than weeks.</p>
+  <p class="lead">I'm a CS student (KSBL, graduating 2027) and an AI intern at Systems Limited. I fine-tune open-source models, build real-time voice agents, and connect AI to the platforms businesses actually run on: WhatsApp, WooCommerce, WordPress, Teams. Claude Code and Cursor are my daily tools, so I can take a rough idea to a deployed, tested service in days rather than weeks.</p>
 </section>
 
 <section>
@@ -97,49 +101,66 @@ footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
   <div class="grid">
 
     <div class="card wide">
-      <div class="feature">
-        <div>
-          <h3>Pearls AQI Predictor</h3>
-          <div class="meta">Open source &middot; end-to-end ML system</div>
-          <p>Forecasts Karachi's air quality 24, 48 and 72 hours ahead on a fully serverless, free-tier stack. Hourly ingestion with self-healing backfill, daily automated retraining, feature store and model registry, and a dashboard with SHAP explanations and hazard alerts.</p>
-          <div class="stats">
-            <div class="stat"><b>6</b><span>models compared</span></div>
-            <div class="stat"><b>&minus;17%</b><span>RMSE vs baseline (24h)</span></div>
-            <div class="stat"><b>169</b><span>tests</span></div>
-          </div>
-          <div class="chips"><span class="chip">LightGBM</span><span class="chip">Hopsworks</span><span class="chip">GitHub Actions</span><span class="chip">FastAPI</span><span class="chip">Streamlit</span><span class="chip">SHAP</span></div>
-          <a class="more" href="https://github.com/ibrahimhzhz/pearls-aqi-predictor">View code &rarr;</a>
-        </div>
+      <h3>Fine-tuned Qwen for resume screening</h3>
+      <div class="meta">Open-source models &middot; LoRA</div>
+      <p>My applicant tracking system originally sent every resume to Gemini. I replaced that step with a local model: a Qwen model fine-tuned with QLoRA (4-bit) in Unsloth, trained on a 6 GB RTX 3050, that handles both jobs in one pass. It extracts a resume into a strict JSON schema and scores it against the job description. The adapter is exported and served through Ollama behind the same FastAPI interface, so it's a drop-in swap and candidate data never leaves the machine.</p>
+      <div class="chips"><span class="chip">Qwen</span><span class="chip">QLoRA 4-bit</span><span class="chip">Unsloth</span><span class="chip">RTX 3050 6 GB</span><span class="chip">Ollama</span></div>
+    </div>
+
+    <div class="card wide">
+      <h3>Pearls AQI Predictor</h3>
+      <div class="meta">Open source &middot; end-to-end ML system</div>
+      <p>Forecasts Karachi's air quality 24, 48 and 72 hours ahead on a fully serverless, free-tier stack. Hourly ingestion with self-healing backfill, daily automated retraining, feature store and model registry, and a dashboard with SHAP explanations and hazard alerts.</p>
+      <div class="stats">
+        <div class="stat"><b>6</b><span>models compared</span></div>
+        <div class="stat"><b>&minus;17%</b><span>RMSE vs baseline (24h)</span></div>
+        <div class="stat"><b>169</b><span>tests</span></div>
       </div>
+      <div class="chips"><span class="chip">LightGBM</span><span class="chip">Hopsworks</span><span class="chip">GitHub Actions</span><span class="chip">FastAPI</span><span class="chip">Streamlit</span><span class="chip">SHAP</span></div>
+      <a class="more" href="https://github.com/ibrahimhzhz/pearls-aqi-predictor">View code &rarr;</a>
     </div>
 
     <div class="card">
       <h3>AI Voice Interviewer</h3>
       <div class="meta">Systems Limited &middot; production</div>
-      <p>Real-time speech-to-speech interviewer inside an enterprise hiring platform. Browser audio over WebSockets into the Gemini Live API, function calls drive the question flow, and every interview ends with an automated scorecard for a recruiter to review.</p>
-      <div class="chips"><span class="chip">Gemini Live</span><span class="chip">WebSockets</span><span class="chip">Pipecat</span><span class="chip">Jenkins</span></div>
+      <p>Real-time speech-to-speech interviewer inside an enterprise hiring platform. Browser audio over WebSockets into the Gemini Live API, function calls drive the question flow, sessions resume after drops, and every interview ends in a scorecard and analytics for a recruiter to review.</p>
+      <div class="chips"><span class="chip">Gemini Live</span><span class="chip">WebSockets</span><span class="chip">Jenkins</span></div>
+    </div>
+
+    <div class="card">
+      <h3>Three voice stacks, compared</h3>
+      <div class="meta">Systems Limited &middot; prototypes</div>
+      <p>Before settling on Gemini Live, I built the interviewer two other ways: a Teams meeting bot on MeetingBaaS, Pipecat, Deepgram and Cartesia, and a browser agent on ElevenLabs Conversational AI. Along the way I traced dropped connections to corporate SSL inspection and blocked QUIC, and fixed them with an HTTP/2 tunnel.</p>
+      <div class="chips"><span class="chip">Pipecat</span><span class="chip">Deepgram</span><span class="chip">Cartesia</span><span class="chip">ElevenLabs</span></div>
     </div>
 
     <div class="card">
       <h3>Teams voice agent</h3>
       <div class="meta">Systems Limited &middot; in progress</div>
-      <p>A Windows agent that joins Microsoft Teams calls, listens through WASAPI loopback and talks back through a virtual audio cable using Gemini Live and TTS. It can run a standup recap on its own; next up is speaker identification and turning action items into tickets.</p>
+      <p>A Windows agent that joins Microsoft Teams calls, listens through WASAPI loopback and talks back through a virtual audio cable using Gemini Live and TTS. It already handles standup recaps; next up is speaker identification and turning action items into tickets.</p>
       <div class="chips"><span class="chip">Gemini Live + TTS</span><span class="chip">WASAPI</span><span class="chip">VB-CABLE</span></div>
     </div>
 
     <div class="card">
       <h3>WhatsApp commerce bot</h3>
-      <div class="meta">LoqAI client, South Africa &middot; production</div>
+      <div class="meta">Freelance, South Africa &middot; production</div>
       <p>Customers browse, build a cart and check out without leaving WhatsApp. Encrypted WhatsApp Flows storefront (RSA/AES-GCM), a checkout state machine synced to WooCommerce, and a Google Sheet the client's staff use to edit every message without a redeploy.</p>
       <div class="chips"><span class="chip">WhatsApp Cloud API</span><span class="chip">FastAPI</span><span class="chip">WooCommerce</span><span class="chip">Railway</span></div>
     </div>
 
     <div class="card">
       <h3>LoqATS</h3>
-      <div class="meta">LoqAI product &middot; open source backend</div>
-      <p>Multi-tenant applicant tracking SaaS. Gemini only extracts facts as strict JSON; a deterministic scorer ranks candidates so every score is explainable. Embeddings match synonymous skills. A 55+ case adversarial test pass caught six production risks before launch.</p>
-      <div class="chips"><span class="chip">FastAPI</span><span class="chip">Celery</span><span class="chip">Vertex AI</span><span class="chip">PostgreSQL</span></div>
+      <div class="meta">Open source backend</div>
+      <p>The multi-tenant applicant tracking system behind the Qwen work. The LLM only extracts facts; a deterministic scorer ranks candidates so every score is explainable. Embeddings match synonymous skills. A 55+ case adversarial test pass caught six production risks before launch.</p>
+      <div class="chips"><span class="chip">FastAPI</span><span class="chip">Celery</span><span class="chip">Redis</span><span class="chip">PostgreSQL</span></div>
       <a class="more" href="https://github.com/ibrahimhzhz/loqats">View code &rarr;</a>
+    </div>
+
+    <div class="card">
+      <h3>Textile factory ERP</h3>
+      <div class="meta">Freelance &middot; production</div>
+      <p>Modules for a textile manufacturer's floor. The barcode-driven Gate Pass Management system is live on DigitalOcean; production tracking is built and tested, with dyeing, embroidery, printing and packing modules planned.</p>
+      <div class="chips"><span class="chip">Barcode workflows</span><span class="chip">DigitalOcean</span></div>
     </div>
 
     <div class="card">
@@ -153,10 +174,24 @@ footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
     </div>
 
     <div class="card">
-      <h3>Automated outreach engine</h3>
-      <div class="meta">LoqAI growth</div>
-      <p>Our own client acquisition runs as an agent: Claude Code orchestrates lead sourcing from Apollo and sending from warmed, SPF/DKIM/DMARC-authenticated mailboxes. Used across UAE, US and Australian real estate campaigns.</p>
-      <div class="chips"><span class="chip">Claude Code</span><span class="chip">MCP</span><span class="chip">Apollo</span><span class="chip">Zoho Mail</span></div>
+      <h3>Etsy content pipeline</h3>
+      <div class="meta">PeachyLoopsStudio &middot; my own shop</div>
+      <p>An AI-assisted pipeline that turns a brief into a finished product: 24+ branded crochet pattern PDFs with code-generated SVG covers, plus SEO titles, 13-tag sets and bundle strategy for every listing across two product lines.</p>
+      <div class="chips"><span class="chip">Python</span><span class="chip">HTML to PDF</span><span class="chip">Etsy SEO</span></div>
+    </div>
+
+    <div class="card">
+      <h3>Agentic outreach pipeline</h3>
+      <div class="meta">Automation</div>
+      <p>Claude Code runs the whole loop: pulls filtered leads from Apollo over MCP and sends from warmed mailboxes with SPF, DKIM and DMARC set up. Used for campaigns across UAE, US and Australian real estate.</p>
+      <div class="chips"><span class="chip">Claude Code</span><span class="chip">MCP</span><span class="chip">Apollo</span></div>
+    </div>
+
+    <div class="card">
+      <h3>SEO and web for local retail</h3>
+      <div class="meta">Freelance</div>
+      <p>For a Karachi retailer: turned a 931-product WooCommerce catalog into cleanup action lists, fixed redirects, canonicals, schema and LCP, and optimized Google Business Profiles. Also rebuilt a car detailing studio's landing page.</p>
+      <div class="chips"><span class="chip">WordPress</span><span class="chip">Search Console</span><span class="chip">GBP</span></div>
     </div>
 
   </div>
@@ -166,7 +201,7 @@ footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
   <h2>Experience</h2>
   <div class="timeline">
     <div class="item"><div class="when">Jul 2026 to now</div><div><b>AI Intern, Systems Limited</b><br>Voice AI and hiring automation on the CDIS team.</div></div>
-    <div class="item"><div class="when">Jan 2025 to now</div><div><b>Co-Founder &amp; Lead Engineer, LoqAI</b><br>AI automation and consulting. Also run Vlabs, our SEO, Google Business Profile and web arm for local businesses.</div></div>
+    <div class="item"><div class="when">Jan 2025 to now</div><div><b>Freelance AI &amp; Automation Engineer</b><br>WhatsApp bots, ERP modules, SEO and web for clients via Fiverr, Upwork and direct.</div></div>
     <div class="item"><div class="when">Jul to Aug 2025</div><div><b>AI Engineering Intern, Salesflo</b><br>Agentic AI with Google ADK, Vertex AI and A2A.</div></div>
   </div>
 </section>
@@ -174,10 +209,12 @@ footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
 <section>
   <h2>Toolkit</h2>
   <dl class="skills">
-    <dt>AI &amp; voice</dt><dd>Gemini &amp; Gemini Live, Vertex AI, Google ADK, LangChain, Pipecat, ElevenLabs, Cartesia, Deepgram, embeddings, fine-tuning</dd>
+    <dt>Open-source models</dt><dd>Qwen, LoRA / QLoRA, Unsloth, Ollama, Hugging Face, embeddings, evaluation</dd>
+    <dt>AI &amp; voice</dt><dd>Gemini &amp; Gemini Live, Vertex AI, Google ADK, LangChain, Pipecat, ElevenLabs, Cartesia, Deepgram</dd>
     <dt>Building with AI</dt><dd>Claude Code, Cursor, MCP servers, agentic workflows</dd>
-    <dt>Automation &amp; APIs</dt><dd>WhatsApp Cloud API &amp; Flows, WooCommerce, Google Sheets API, Apollo, n8n, Make.com, webhooks</dd>
-    <dt>Backend &amp; cloud</dt><dd>Python, FastAPI, Celery, Redis, PostgreSQL, WebSockets, Docker, GCP, Railway, Render, GitHub Actions, Jenkins</dd>
+    <dt>Automation &amp; APIs</dt><dd>WhatsApp Cloud API &amp; Flows, WooCommerce, WordPress, Google Sheets API, Apollo, n8n, Make.com</dd>
+    <dt>Backend &amp; cloud</dt><dd>Python, FastAPI, Celery, Redis, PostgreSQL, WebSockets, Docker, GCP, DigitalOcean, Railway, GitHub Actions, Jenkins</dd>
+    <dt>Security</dt><dd>RSA/AES-GCM payload encryption, JWT auth, rate limiting, SPF/DKIM/DMARC</dd>
   </dl>
 </section>
 
