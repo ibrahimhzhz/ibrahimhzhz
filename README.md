@@ -15,11 +15,11 @@ I'm currently exploring agentic AI, scalable architectures, and real-world SaaS 
 
 ---
 
-## 🔭 Currently Working On
+## 🔭 Featured
 
-- **[ats-backend](https://github.com/ibrahimhzhz/ats-backend)** — An AI-powered applicant tracking system backend built in Python
-- **[loq-hr](https://github.com/ibrahimhzhz/loq-hr)** — A real-world HR SaaS product in JavaScript
-- Exploring **agentic AI workflows** and **scalable system design**
+- **[Portfolio](https://ibrahimhzhz.github.io/ibrahimhzhz/)**: voice agents, automations and ML systems I've shipped
+- **[pearls-aqi-predictor](https://github.com/ibrahimhzhz/pearls-aqi-predictor)**: serverless ML system forecasting Karachi's AQI 24/48/72h ahead, with automated retraining, SHAP explanations and 169 tests
+- **[loqats](https://github.com/ibrahimhzhz/loqats)**: multi-tenant AI applicant tracking backend (FastAPI, Celery, Vertex AI) with explainable, deterministic scoring
 
 ---
 
